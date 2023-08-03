@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
-import Properties from "./components/props/Properties";
+// import Properties from "./components/props/Properties";
+import Operators from "./components/ternary-operators/Operators";
 
 const App = () => {
   const alertFunction = () => {
@@ -8,12 +9,13 @@ const App = () => {
   };
   return (
     <div>
-      <h1>react property practice </h1>
-      <Properties
+      <Operators/>
+      {/* <h1>react property practice </h1> */}
+      {/* <Properties
         buttonClick={alertFunction}
         title={"take a shot!"}
         style={{ backgroundColor: "red" }}
-      />
+      /> */}
     </div>
   );
 };
