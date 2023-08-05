@@ -3,6 +3,7 @@ import "./index.css";
 // import Properties from "./components/props/Properties";
 // import Operators from "./components/ternary-operators/Operators";
 import Exercise from "./components/ternary-operators/Exercise";
+import State from "./components/usestatehook/State";
 
 const App = () => {
   const alertFunction = () => {
@@ -10,7 +11,7 @@ const App = () => {
   };
   return (
     <div>
-      <Exercise />
+      <State />
       {/* <Operators/> */}
       {/* <h1>react property practice </h1> */}
       {/* <Properties
