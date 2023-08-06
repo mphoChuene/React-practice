@@ -4,6 +4,7 @@ import "./index.css";
 // import Operators from "./components/ternary-operators/Operators";
 import Exercise from "./components/ternary-operators/Exercise";
 import State from "./components/usestatehook/State";
+import Todo from "./components/CRUD/Todo";
 
 const App = () => {
   const alertFunction = () => {
@@ -11,7 +12,8 @@ const App = () => {
   };
   return (
     <div>
-      <State />
+      <Todo/>
+      {/* <State /> */}
       {/* <Operators/> */}
       {/* <h1>react property practice </h1> */}
       {/* <Properties
