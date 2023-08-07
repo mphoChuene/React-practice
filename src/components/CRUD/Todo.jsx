@@ -8,18 +8,23 @@ const Todo = () => {
     setTask(event.target.value);
   };
   const addTask = () => {
-    setTodoList([...todoList, task]);
+    const todoObj = {
+        id: todoList.length == 0 ? 1 : [todoList.length-1].id +1,
+        taskName: task
+    }
+    setTodoList([...todoList, todoObj]);
   };
-  const deleteTask=(taskName)=>{
-        const newTodoList = todoList.filter((task)=>{
-            if (taskName===task){
-                return false
-            } else {
-                return true
-            }
-        })
-        setTodoList(newTodoList)
+  const deleteTask = (taskName)=>{
+    const newTodoList= todoList.filter((taskName)=>{
+        if(taskName === task){
+            return false
+        } else{
+            return true
+        }
+    })
+    setTodoList(newTodoList)
   }
+
   return (
     <div>
       <div className="inputs">
@@ -32,6 +37,7 @@ const Todo = () => {
             <div className="container">
               <h4>{task}</h4>
               <button onClick={()=>deleteTask(task)}>delete</button>
+              
             </div>
           );
         })}
