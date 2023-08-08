@@ -8,17 +8,17 @@ const Todo = () => {
     setTask(event.target.value);
   };
   const addTask = () => {
-    const todoObj = {
-        id: todoList.length == 0 ? 1 : [todoList.length-1].id +1,
+    const todoObj=[{
+        id: todoList.length === 0 ? 1 :[todoList.length-1].id+1,
         taskName: task
-    }
-    setTodoList([...todoList, todoObj]);
+    }]
+    setTodoList([...todoList, taskName]);
   };
-  const deleteTask = (taskName)=>{
-    const newTodoList= todoList.filter((taskName)=>{
-        if(taskName === task){
+  const deleteTask =(task)=>{
+   const newTodoList= todoList.filter((taskName)=>{
+        if(task === taskName){
             return false
-        } else{
+        } else {
             return true
         }
     })
@@ -27,20 +27,19 @@ const Todo = () => {
 
   return (
     <div>
-      <div className="inputs">
+      <div className="input-arera">
         <input type="text" onChange={handleInput} />
         <button onClick={addTask}>add</button>
       </div>
-      <div className="display">
-        {todoList.map((task) => {
-          return (
+      <div className="viewing-list">
+       {todoList.map((task)=>{
+        return (
             <div className="container">
-              <h4>{task}</h4>
-              <button onClick={()=>deleteTask(task)}>delete</button>
-              
+                    <h4>{Todo.taskName}</h4>
+                    <button onClick={()=>deleteTask(task)}>delete</button>         
             </div>
-          );
-        })}
+        )
+       })}
       </div>
     </div>
   );
