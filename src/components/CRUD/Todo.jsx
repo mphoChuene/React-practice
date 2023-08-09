@@ -4,6 +4,7 @@ import { TaskProps } from './TaskProps'
 const Todo = () => {
   const [todoList,setTodoList]=useState([])
   const [task,setTask] =useState('')
+  
 
   const handleInput =(event)=>{
     setTask(event.target.value)
@@ -11,10 +12,12 @@ const Todo = () => {
   const addTask =()=>{
     const todoObj ={
       id: todoList.length === 0? 1 : todoList[todoList.length-1].id+1,
-      taskName: task
+      taskName: task,
+      isComplete: false
     }
     setTodoList([...todoList,todoObj])
   }
+
   const deleteTask=(id)=>{
     const newTodo = todoList.filter((todoObj)=>{
       if(todoObj.id === id){
@@ -26,6 +29,17 @@ const Todo = () => {
     setTodoList(newTodo)
   }
 
+  const completed =(id)=>{
+    const completedTodo =todoList.map(((todoObj)=>{
+    if(todoObj.id === id){
+      return {...todoObj,isComplete: true}
+    } else {
+      return todoObj;
+    }
+    }))
+    setTodoList(completedTodo)
+  }
+
 
   return (
     <div>
@@ -35,7 +49,7 @@ const Todo = () => {
       </div>
       <div className="todolist">
         {todoList.map((task)=>{
-        return( <TaskProps  taskName={task.taskName} id={task.id} deleteTask={deleteTask}/>)
+        return( <TaskProps  taskName={task.taskName} id={task.id} deleteTask={deleteTask} completed={completed} completedtask={todoObj.completed} isComplete={todoObj.isComplete}/>)
         })}
       </div>
     </div>
