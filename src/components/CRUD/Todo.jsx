@@ -1,59 +1,68 @@
-import React, { useState } from 'react'
-import { TaskProps } from './TaskProps'
+import React, { useState } from "react";
+import { TaskProps } from "./TaskProps";
 
 const Todo = () => {
-  const [todoList,setTodoList]=useState([])
-  const [task,setTask] =useState('')
-  
+  const [todoList, setTodoList] = useState([]);
+  const [task, setTask] = useState("");
 
-  const handleInput =(event)=>{
-    setTask(event.target.value)
-  }
-  const addTask =()=>{
-    const todoObj ={
-      id: todoList.length === 0? 1 : todoList[todoList.length-1].id+1,
+  const handleInput = (event) => {
+    setTask(event.target.value);
+  };
+  const addTask = () => {
+    const todoObj = {
+      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
       taskName: task,
-      isComplete: false
-    }
-    setTodoList([...todoList,todoObj])
-  }
+      isComplete: false,
+    };
+    setTodoList([...todoList, todoObj]);
+  };
 
-  const deleteTask=(id)=>{
-    const newTodo = todoList.filter((todoObj)=>{
-      if(todoObj.id === id){
-        return false
+  const deleteTask = (id) => {
+    const newTodo = todoList.filter((todoObj) => {
+      return todoObj.id !== id;
+      // if (todoObj.id === id) {
+      // return false;
+      // } else {
+      //   return true;
+      // }
+    });
+    setTodoList(newTodo);
+  };
+  console.log(todoList)
+  const completed = (id) => {
+    const completedTodo = todoList.map((todoObj) => {
+      if (todoObj.id === id) {
+        return { ...todoObj, isComplete: true };
       } else {
-        return true
+        return todoObj;
       }
-    })
-    setTodoList(newTodo)
-  }
-
-  const completed =(id)=>{
-    const completedTodo =todoList.map(((todoObj)=>{
-    if(todoObj.id === id){
-      return {...todoObj,isComplete: true}
-    } else {
-      return todoObj;
-    }
-    }))
-    setTodoList(completedTodo)
-  }
-
+    });
+    setTodoList(completedTodo);
+  };
 
   return (
     <div>
       <div className="inputs">
-        <input type="text" onChange={handleInput}/>
+        <input type="text" onChange={handleInput} />
         <button onClick={addTask}>add</button>
       </div>
       <div className="todolist">
-        {todoList.map((task)=>{
-        return( <TaskProps  taskName={task.taskName} id={task.id} deleteTask={deleteTask} completed={completed} completedtask={todoObj.completed} isComplete={todoObj.isComplete}/>)
+        {todoList.map((task) => {
+          return (
+            <TaskProps
+              key={task.id}
+              taskName={task.taskName}
+              id={task.id}
+              deleteTask={deleteTask}
+              completed={completed}
+              completedtask={task.completed}
+              isComplete={task.isComplete}
+            />
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;
