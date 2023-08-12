@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Component = () => {
   const [showText, setShowText] = useState(false);
   const [text, setText] = useState("");
 
+useEffect(()=>{
+  console.log('component mounted!')
+return ()=>{
+  console.log('component unmounted')
+}
+
+},[])
   const handleClick = () => {
-    setShowText(!showText)
-  }
+    setShowText(!showText);
+  };
 
   const handleText = (event) => {
     setText(event.target.value);
