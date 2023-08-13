@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 
 const FetchData = () => {
   const [name, setName] = useState("");
-  const [predictedAge, setPredictedAge] = useState(0);
+const [predictedAge, setPredictedAge] = useState(null);
   useEffect(() => {
     guessAge();
   }, []);
   const guessAge = () => {
-    axios.get(`https://api.agify.io/name=${name}`).then((res) => {
-      setPredictedAge(res.data.age);
+    axios.get(`https://api.agify.io/?name=${name}`).then((res) => {
+      setPredictedAge(res.data);
     });
   };
 
@@ -25,7 +25,8 @@ const FetchData = () => {
         <button onClick={guessAge}>guess age</button>
       </div>
       <div className="output">
-        <h4> {predictedAge && name}</h4>
+        <h4> name:{predictedAge?.name}</h4>
+        <h4> age: {predictedAge?.age}</h4>
       </div>
     </div>
   );
