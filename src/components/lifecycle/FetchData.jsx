@@ -3,30 +3,28 @@ import React, { useEffect, useState } from "react";
 
 const FetchData = () => {
   const [name, setName] = useState("");
-const [predictedAge, setPredictedAge] = useState(null);
+  const [data, setData] = useState(null);
   useEffect(() => {
-    guessAge();
+    predictInfo()
   }, []);
-  const guessAge = () => {
+
+  const predictInfo = () => {
     axios.get(`https://api.agify.io/?name=${name}`).then((res) => {
-      setPredictedAge(res.data);
+      setData(res.data);
+      console.log(res.data)
     });
   };
 
   return (
     <div>
       <div className="input">
-        <input
-          type="text"
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        <button onClick={guessAge}>guess age</button>
+        <input type="text" onChange={(event) => setName(event.target.value)} />
+        <button onClick={predictInfo}>predict age</button>
       </div>
-      <div className="output">
-        <h4> name:{predictedAge?.name}</h4>
-        <h4> age: {predictedAge?.age}</h4>
+      <div className="display">
+        <h4>name: {data?.name}</h4>
+        <h4>age: {data?.age}</h4>
+        <h4>count: {data?.count}</h4>
       </div>
     </div>
   );
