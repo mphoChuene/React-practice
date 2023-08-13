@@ -6,12 +6,14 @@ import "./index.css";
 // import State from "./components/usestatehook/State";
 // import Todo from "./components/CRUD/Todo";
 // import Component from "./components/lifecycle/Component";
-import FetchData from "./components/lifecycle/FetchData";
+// import FetchData from "./components/lifecycle/FetchData";
+import ExerciseApi from "./components/lifecycle/ExerciseApi";
 
 const App = () => {
   return (
     <div>
-      <FetchData />
+      <ExerciseApi />
+      {/* <FetchData /> */}
       {/* <Component/> */}
       {/* <Todo/> */}
       {/* <State /> */}
