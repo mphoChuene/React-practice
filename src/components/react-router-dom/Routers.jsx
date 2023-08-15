@@ -7,6 +7,8 @@ import Navbar from "./Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
+// resolve the useContext hook and understand the basic
+
 export const AppContext = context
 const Routers = () => {
   const [username,setUsername]=useState('')
@@ -20,6 +22,7 @@ const Routers = () => {
           <Route path="/fetchApi" element={<FetchData />} />
           <Route path="/about" element={<About />} />
           <Route path="/todo" element={<Todo />} />
+          <Route path="/todo" element={<ExerciseApi />} />
         </Routes>
       </Router>
       </AppContext.Provider>

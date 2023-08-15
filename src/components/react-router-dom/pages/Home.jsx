@@ -1,11 +1,9 @@
-import React from 'react'
-import {AppContext} from '../Routers'
+import React, { useContext } from "react";
+import { AppContext } from "../Routers";
 
 const Home = () => {
-    const {username}=useContext(AppContext)
-  return (
-    <div>this is the Home page {username}</div>
-  )
-}
+  const { username } = useContext(AppContext);
+  return <div>this is the Home page {username}</div>;
+};
 
-export default Home
+export default Home;
