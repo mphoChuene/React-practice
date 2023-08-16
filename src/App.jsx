@@ -7,15 +7,17 @@ import "./index.css";
 // import Todo from "./components/CRUD/Todo";
 // import Component from "./components/lifecycle/Component";
 // import FetchData from "./components/lifecycle/FetchData";
-// import ExerciseApi from "./components/lifecycle/ExerciseApi";
-import Routers from "./components/react-router-dom/Routers";
+import ExerciseApi from "./components/lifecycle/ExerciseApi";
+import UseContext from "./components/react-router-dom/pages/UseContext";
+// import Routers from "./components/react-router-dom/Routers";
 
 const App = () => {
   return (
     <div>
-      <Routers />
-      {/* <ExerciseApi /> */}
+      <UseContext />
       {/* <FetchData /> */}
+      {/* <Routers /> */}
+      {/* <ExerciseApi /> */}
       {/* <Component/> */}
       {/* <Todo/> */}
       {/* <State /> */}
