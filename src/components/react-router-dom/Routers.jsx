@@ -1,4 +1,4 @@
-import React,{useState,createContext} from "react";
+import React, { useState, createContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FetchData from "../lifecycle/FetchData";
 import ExerciseApi from "../lifecycle/ExerciseApi";
@@ -9,22 +9,22 @@ import About from "./pages/About";
 
 // resolve the useContext hook and understand the basic
 
-export const AppContext = context
+export const AppContext = createContext();
 const Routers = () => {
-  const [username,setUsername]=useState('')
+  const [username, setUsername] = useState("Mpho");
   return (
     <div>
-      <AppContext.Provider value={{username,setUsername}}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/fetchApi" element={<FetchData />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/todo" element={<Todo />} />
-          <Route path="/todo" element={<ExerciseApi />} />
-        </Routes>
-      </Router>
+      <AppContext.Provider value={{ username, setUsername }}>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/fetchApi" element={<FetchData />} /> */}
+            <Route path="/about" element={<About />} />
+            <Route path="/todo" element={<Todo />} />
+            {/* <Route path="/todo" element={<ExerciseApi />} /> */}
+          </Routes>
+        </Router>
       </AppContext.Provider>
     </div>
   );
