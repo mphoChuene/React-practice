@@ -1,22 +1,11 @@
-import React, { useContext, useState } from "react";
-import { HomeContext } from "../pages/Home";
+import React, { useContext } from "react";
+import { userContext } from "./Home";
 
 const About = () => {
-  const [username, setUsername] = useContext(HomeContext);
-  const [updatedUser, setUpdatedUser] = useState("");
-  const handleInput = (e) => {
-    setUpdatedUser(e.target.value);
-  };
-  const updateName = () => {
-    setUsername(updatedUser);
-  };
+  const username = useContext(userContext);
   return (
     <div>
-      <div className="input">
-        <h3>this is the about page and the user loggedin is {username}</h3>
-        <input type="text" onChange={handleInput} />
-        <button onClick={updateName}>update</button>
-      </div>
+      <h4>the user loggedin is {username}</h4>
     </div>
   );
 };
