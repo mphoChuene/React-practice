@@ -1,7 +1,8 @@
 import React, { useState, createContext } from "react";
+import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FetchData from "../lifecycle/FetchData";
-import ExerciseApi from "../lifecycle/ExerciseApi";
+// import FetchData from "../lifecycle/FetchData";
+// import ExerciseApi from "../lifecycle/ExerciseApi";
 import Todo from "../CRUD/Todo";
 import Navbar from "./Navbar";
 import Home from "./pages/Home";
