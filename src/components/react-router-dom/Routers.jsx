@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import FetchData from "../lifecycle/FetchData";
 // import ExerciseApi from "../lifecycle/ExerciseApi";
@@ -13,8 +13,10 @@ import About from "./pages/About";
 export const AppContext = createContext();
 const Routers = () => {
   const [username, setUsername] = useState("Mpho");
+  const client = new QueryClient();
   return (
     <div>
+      <QueryClientProvider client={client}>
       <AppContext.Provider value={{ username, setUsername }}>
         <Router>
           <Navbar />
@@ -27,6 +29,7 @@ const Routers = () => {
           </Routes>
         </Router>
       </AppContext.Provider>
+      </QueryClientProvider>
     </div>
   );
 };
