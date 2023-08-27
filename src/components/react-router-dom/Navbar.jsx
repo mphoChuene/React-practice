@@ -10,6 +10,9 @@ const Navbar = () => {
       <Link to="/todo" style={{ padding: "5px" }}>
         TodoList
       </Link>
+      <Link to="/register" style={{ padding: "5px" }}>
+        register
+      </Link>
       {/* <Link to="/fetchApi" style={{ padding: "5px" }}>
         API
       </Link> */}

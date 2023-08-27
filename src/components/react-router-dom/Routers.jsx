@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Todo from "../CRUD/Todo";
 import Navbar from "./Navbar";
 import Home from "./pages/Home";
+import Form from "../React-forms/Form";
 import About from "./pages/About";
 
 // resolve the useContext hook and understand the basic
@@ -22,6 +23,7 @@ const Routers = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Form />} />
             {/* <Route path="/fetchApi" element={<FetchData />} /> */}
             <Route path="/about" element={<About />} />
             <Route path="/todo" element={<Todo />} />
