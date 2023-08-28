@@ -10,12 +10,14 @@ import "./index.css";
 // import ExerciseApi from "./components/lifecycle/ExerciseApi";
 // import UseContext from "./components/react-router-dom/pages/UseContext";
 // import Routers from "./components/react-router-dom/Routers";
-import Home from "./components/react-router-dom/pages/Home";
+// import Home from "./components/react-router-dom/pages/Home";
+import CustomeHooks from "./components/CustomeHooks/CustomeHooks";
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <CustomeHooks />
+      {/* <Home /> */}
       {/* <FetchData /> */}
       {/* <Routers /> */}
       {/* <ExerciseApi /> */}
