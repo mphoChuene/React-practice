@@ -12,11 +12,13 @@ import "./index.css";
 // import Routers from "./components/react-router-dom/Routers";
 // import Home from "./components/react-router-dom/pages/Home";
 import CustomeHooks from "./components/CustomeHooks/CustomeHooks";
+import ExampleCus from "./components/CustomeHooks/ExampleCus";
 
 const App = () => {
   return (
     <div>
-      <CustomeHooks />
+      <ExampleCus />
+      {/* <CustomeHooks /> */}
       {/* <Home /> */}
       {/* <FetchData /> */}
       {/* <Routers /> */}
