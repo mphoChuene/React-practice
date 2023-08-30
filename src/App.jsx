@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import Home from "./components/ReactQuery/Home";
 // import Properties from "./components/props/Properties";
 // import Operators from "./components/ternary-operators/Operators";
 // import Exercise from "./components/ternary-operators/Exercise";
@@ -11,13 +12,14 @@ import "./index.css";
 // import UseContext from "./components/react-router-dom/pages/UseContext";
 // import Routers from "./components/react-router-dom/Routers";
 // import Home from "./components/react-router-dom/pages/Home";
-import CustomeHooks from "./components/CustomeHooks/CustomeHooks";
-import ExampleCus from "./components/CustomeHooks/ExampleCus";
+// import CustomeHooks from "./components/CustomeHooks/CustomeHooks";
+// import ExampleCus from "./components/CustomeHooks/ExampleCus";
 
 const App = () => {
   return (
     <div>
-      <ExampleCus />
+      <Home />
+      {/* <ExampleCus /> */}
       {/* <CustomeHooks /> */}
       {/* <Home /> */}
       {/* <FetchData /> */}
