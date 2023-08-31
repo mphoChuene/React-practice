@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const Query = () => {
   const {}= useQuery(['cat'], ()=> {
-    axios.get('').then()
+    return axios.get('https://catfact.ninja/fact').then((res)=>(res.data))
   })
   return (
     <div>Query</div>
