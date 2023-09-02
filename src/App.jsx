@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import Home from "./components/ReactQuery/Home";
+import TypeSafety from "./components/Typescript/TypeSafety";
 // import Properties from "./components/props/Properties";
 // import Operators from "./components/ternary-operators/Operators";
 // import Exercise from "./components/ternary-operators/Exercise";
@@ -18,7 +19,7 @@ import Home from "./components/ReactQuery/Home";
 const App = () => {
   return (
     <div>
-      <Home />
+      <TypeSafety />
       {/* <ExampleCus /> */}
       {/* <CustomeHooks /> */}
       {/* <Home /> */}
