@@ -7,7 +7,7 @@ const TypeSafety = () => {
       <h2>typescript practice</h2>
       <Person 
       name='Mpho'
-      email= 'mpho@email'
+      email='mpho@email'
       age= {21}
       isMarried ={true}
       friends= {['Mpho','Lethabo','Chris','Vincent']}/>
