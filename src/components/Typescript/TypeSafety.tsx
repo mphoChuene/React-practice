@@ -10,7 +10,7 @@ const TypeSafety = () => {
       email='mpho@email'
       age= {21}
       isMarried ={true}
-      friends= {['Mpho','Lethabo','Chris','Vincent']}/>
+      friends= {['Mpho','Lethabo','Chris','Vincent','innocent','Curtis']}/>
     </div>
   );
 };
