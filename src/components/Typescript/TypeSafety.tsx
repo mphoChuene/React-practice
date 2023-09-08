@@ -19,6 +19,20 @@ const TypeSafety = () => {
         isMarried={false}
         friends={["Mpho", "Abbigail", "Vincent", "innocent", "Abrina"]}
       />
+      <Person
+        name="Kgetho"
+        email="Kgeth@email"
+        age={21}
+        isMarried={false}
+        friends={[
+          "Mpho",
+          "Abbigail",
+          "Vincent",
+          "innocent",
+          "Abrina",
+          "Ntsako",
+        ]}
+      />
     </div>
   );
 };
