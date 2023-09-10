@@ -30,7 +30,7 @@ const TypeSafety = () => {
           "Vincent",
           "innocent",
           "Abrina",
-          "Ntsako",
+          "Goodman",
         ]}
       />
     </div>
